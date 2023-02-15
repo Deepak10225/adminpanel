@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TAILWIND CSS -->
+    <link href="/css/tailwind.css" rel="stylesheet" />
+    <!-- ALPINE JS -->
+    <script src="/js/alpine.js" defer></script>
+    <script src="/js/deshboard.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Better Code</title>
+  </head>
+  <body onload="navibar()" class="antialiased bg-gray-100">
+    <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand">Deshboard</a>
+        <form class="d-flex" role="search">
+          <a href="" class="text-light text-decoration-none">Logout</a>
+        </form>
+      </div>
+    </nav>
+    <div class="flex relative" x-data="{navOpen: false}">
+      <!-- NAV -->
+      <div id="deshboardData"></div>
+      <!-- END OF NAV -->
+
+      <!-- PAGE CONTENT -->
+      <main class="flex-1 h-screen overflow-y-scroll overflow-x-hidden">
+        <div
+          class="md:hidden justify-between items-center bg-black text-white flex"
+        >
+          <h1 class="text-2xl font-bold px-4">Better Code</h1>
+          <button
+            @click="navOpen = !navOpen"
+            class="btn p-4 focus:outline-none hover:bg-gray-800"
+          >
+            <svg
+              class="w-6 h-6 fill-current"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <section class="max-w-7xl mx-auto py-4 px-5">
+          <div
+            class="flex justify-between items-center border-b border-gray-300"
+          >
+            <h1 class="text-2xl font-semibold pt-2 pb-6">Dashboard</h1>
+          </div>
+
+          <!-- STATISTICS -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 py-6">
+            <div
+              class="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5"
+            >
+              <div class="space-y-2">
+                <p class="text-xs text-gray-400 uppercase">Total Clients</p>
+                <div class="flex items-center space-x-2">
+                  <h1 class="text-xl font-semibold">$13,500</h1>
+                  <p class="text-xs bg-green-50 text-green-500 px-1 rounded">
+                    +4.5
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="w-12 h-12 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+
+            <div
+              class="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5"
+            >
+              <div class="space-y-2">
+                <p class="text-xs text-gray-400 uppercase">Total items</p>
+                <div class="flex items-center space-x-2">
+                  <h1 class="text-xl font-semibold">819</h1>
+                  <p class="text-xs bg-green-50 text-green-500 px-1 rounded">
+                    +7.4
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="w-12 h-12 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+            </div>
+
+            <div
+              class="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5"
+            >
+              <div class="space-y-2">
+                <p class="text-xs text-gray-400 uppercase">Orders</p>
+                <div class="flex items-center space-x-2">
+                  <h1 class="text-xl font-semibold">0</h1>
+                  <p class="text-xs bg-red-50 text-red-500 px-1 rounded">
+                    -2.9
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="w-12 h-12 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                ></path>
+              </svg>
+            </div>
+
+            <div
+              class="bg-white shadow rounded-sm flex justify-between items-center py-3.5 px-3.5"
+            >
+              <div class="space-y-2">
+                <p class="text-xs text-gray-400 uppercase">Tickets</p>
+                <div class="flex items-center space-x-2">
+                  <h1 class="text-xl font-semibold">0</h1>
+                  <p class="text-xs bg-green-50 text-green-500 px-1 rounded">
+                    +3.1
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="w-12 h-12 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <!-- END OF STATISTICS -->
+        </section>
+        <!-- END OF PAGE CONTENT -->
+      </main>
+    </div>
+  </body>
+</html>

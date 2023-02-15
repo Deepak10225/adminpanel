@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TAILWIND CSS -->
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/my.css">
+    <!-- ALPINE JS -->
+    <script src="/js/alpine.js" defer></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Better Code</title>
+    <script src="/js/alpine.js" defer></script>
+    <script src="/js/deshboard.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+<style>
+    .clientmasteer{
+        width: 40%;
+        display: block;
+        margin: 8% auto;
+    }
+</style>
+</head>
+<body onload="navibar()" class="antialiased bg-gray-100">
+    <nav class="navbar bg-body-tertiary " data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Deshboard</a>
+          <form class="d-flex" role="search">
+         <a href="" class="text-light text-decoration-none">Logout</a>
+          </form>
+        </div>
+      </nav>
+    <div class="flex relative" x-data="{navOpen: false}">
+        <!-- NAV -->
+        <div id="deshboardData"></div>
+        <form action="" method="post" class="clientmasteer">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                Select  Customer
+              </label>
+            
+              <select name="clientname" class="form-select my-3" aria-label="Default select example">
+              <%data.forEach(e=>{%>
+                
+                        <option value="<%=e.clientname%>"><%=e.clientname%></option>
+                        <%})%>
+                    </select>
+              
+              
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Select  Item
+                      </label>
+                      <select name="countries" id="countries" class="form-select my-3" aria-label="Default select example" multiple>
+                <%items.forEach(e=>{%>
+                    <option value="<%=e.username%>"><%=e.username%></option>
+                
+               <% })%>
+                
+            </select>
+            <label class="block text-gray-700 text-sm font-bold mt-3 mb-2" for="username">
+                Select  More Items
+              </label>
+            <select class="form-select mb-2" name="addmore" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Discount</label>
+                <input type="text" name="discount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Discount">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+              </div>
+              <div>
+              <input  name="date" type="date" id="birthday" name="birthday">
+            </div>
+              <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+        </main>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+        new MultiSelectTag('countries')  // id
+    </script>
+</body>
+</html>
